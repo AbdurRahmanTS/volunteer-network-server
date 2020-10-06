@@ -12,6 +12,9 @@ app.use(cors());
 
 const port = 5000
 
+app.get('/', (req, res) =>{
+  res.send("Hello from db it's working!")
+})
 
 MongoClient.connect(uri, { useUnifiedTopology: true }, function (err, client) {
   const volunteerItemsCollection = client.db(`${process.env.DB_NAME}`).collection("volunteerItems");
